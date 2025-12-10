@@ -1,0 +1,24 @@
+.panel {
+    background: #d6d6d6;
+    padding: 12px;
+    border-radius: 4px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+}
+
+.row label {
+    width: 150px;
+    font-weight: 600;
+}
+
+.row input,
+.row select {
+    flex: 1;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}

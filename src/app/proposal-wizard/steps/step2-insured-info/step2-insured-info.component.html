@@ -1,0 +1,23 @@
+<div class="panel" [formGroup]="group">
+    <h3>Insured Info</h3>
+
+    <div class="insured-list">
+        <div class="insured-row" *ngFor="let ctl of insuredArray.controls; let i = index" [formGroupName]="i">
+            <div class="col"><label>Name</label><input formControlName="name" /></div>
+            <div class="col"><label>Birthday</label><input type="date" formControlName="birthday" /></div>
+            <div class="col"><label>Age</label><input formControlName="insuredAge" /></div>
+            <div class="col"><label>Gender</label>
+                <select formControlName="gender">
+                    <option value="">--</option>
+                    <option value="M">M</option>
+                    <option value="F">F</option>
+                </select>
+            </div>
+            <div class="col actions"><button (click)="removeInsured.emit(i)">Delete</button></div>
+        </div>
+    </div>
+
+    <div class="actions-bottom">
+        <button (click)="addInsured.emit()">Add Insured</button>
+    </div>
+</div>

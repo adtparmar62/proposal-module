@@ -1,0 +1,48 @@
+.panel {
+    background: #d6d6d6;
+    padding: 12px;
+    border-radius: 4px;
+}
+
+.insured-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+    align-items: center;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+.col label {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.col input,
+.col select {
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    min-width: 140px;
+}
+
+.actions button {
+    background: #eee;
+    border: 1px solid #bbb;
+    padding: 6px 8px;
+}
+
+.actions-bottom {
+    margin-top: 12px;
+}
+
+
+@media (max-width:700px) {
+    .insured-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

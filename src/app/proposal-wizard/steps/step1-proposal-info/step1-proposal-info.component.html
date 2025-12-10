@@ -1,0 +1,30 @@
+<div class="panel" [formGroup]="group">
+    <h3>Proposal</h3>
+    <div>
+        <div class="row">
+            <label>Agent Code</label>
+            <input formControlName="agentCode" />
+        </div>
+        <div class="row">
+            <label>Proposal ID</label>
+            <input formControlName="proposalId" />
+        </div>
+        <div class="row">
+            <label>Effective date</label>
+            <input type="date" formControlName="effectiveDate" />
+        </div>
+    </div>
+
+    <h3>Proposer Info</h3>
+    <div>
+        <div class="col actions">
+            <button>Proposer Info</button>
+        </div>
+        <div class="row">
+            <input formControlName="proposerInfo" />
+        </div>
+    <div class="col actions"><button (click)="deleteApplicant.emit()">Delete Applicant</button></div>
+
+    </div>
+
+</div>

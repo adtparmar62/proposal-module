@@ -1,0 +1,127 @@
+.wizard-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 12px;
+}
+
+
+.wizard-steps {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.step {
+    text-align: center;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 200ms;
+}
+
+.step.active {
+    opacity: 1;
+}
+
+.circle {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 2px solid #666;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 6px auto;
+    background: #ccc;
+}
+
+.step.active .circle {
+    background: #2b86c6;
+    color: white;
+    border-color: #2b86c6;
+}
+
+.label {
+    font-size: 12px;
+    color: #333;
+}
+
+
+.wizard-viewport {
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    width: 400%;
+    transition: transform 350ms ease;
+}
+
+.slide {
+    width: 100%;
+    padding: 10px 14px 30px 14px;
+    box-sizing: border-box;
+    background: #efefef;
+    min-height: 420px;
+}
+
+
+.wizard-actions {
+    text-align: right;
+    margin-top: 12px;
+}
+
+.btn {
+    padding: 8px 14px;
+    margin-left: 8px;
+    border: 1px solid #666;
+    background: white;
+    cursor: pointer;
+}
+
+.btn.finish {
+    background: #1e88e5;
+    color: white;
+    border-color: #1e88e5;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.wizard-viewport {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.slider {
+  display: flex;
+  width: 400%;     // 4 slides → 4 * 100%
+  transition: transform 0.4s ease;
+}
+
+.slide {
+  width: 100%;
+  flex-shrink: 0;
+  padding: 20px;
+}
+
+.panel {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+
+/* Responsive */
+@media (max-width: 700px) {
+    .wizard-steps {
+        font-size: 11px;
+    }
+
+    .slide {
+        min-height: 520px;
+    }
+}

@@ -1,0 +1,52 @@
+<div class="wizard-wrap">
+    <!-- Top step circles -->
+    <div class="wizard-steps">
+        <div class="step" *ngFor="let s of [0,1,2,3]; let i = index" [class.active]="step===i" (click)="goTo(i)">
+            <div class="circle">{{i+1}}</div>
+            <div class="label">
+                <ng-container [ngSwitch]="i">
+                    <span *ngSwitchCase="0">Proposal Info</span>
+                    <span *ngSwitchCase="1">Insured Info</span>
+                    <span *ngSwitchCase="2">Product Info</span>
+                    <span *ngSwitchCase="3">Account Details</span>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+
+
+    <form [formGroup]="wizardForm" class="wizard-viewport">
+        <div class="slider" [style.transform]="'translateX(-' + (step * 100) + '%)'">
+
+
+            <section class="slide">
+                <app-step1-proposal-info [group]="proposalInfoGroup" (deleteApplicant)="deleteApplicant($event)"></app-step1-proposal-info>
+            </section>
+
+
+            <section class="slide">
+                <app-step2-insured-info [group]="insuredInfoGroup" (addInsured)="addInsured()"
+                    (removeInsured)="removeInsured($event)"></app-step2-insured-info>
+            </section>
+
+
+            <section class="slide">
+                <app-step3-product-info [group]="productInfoGroup"></app-step3-product-info>
+            </section>
+
+
+            <section class="slide">
+                <app-step4-account-details [group]="accountDetailsGroup"></app-step4-account-details>
+            </section>
+
+
+        </div>
+    </form>
+
+
+    <div class="wizard-actions">
+        <button class="btn prev" (click)="prev()" [disabled]="step===0">Previous</button>
+        <button class="btn next" (click)="next()" [disabled]="step===3">Next</button>
+        <button class="btn finish" *ngIf="step===3" (click)="finish()">Finish</button>
+    </div>
+</div>

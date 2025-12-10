@@ -1,0 +1,13 @@
+<div class="panel" [formGroup]="group">
+    <h3>Product Info</h3>
+
+    <div class="row"><label>Product Name</label><input formControlName="productName" /></div>
+    <div class="row"><label>Policy Term</label><input formControlName="policyTerm" /></div>
+    <div class="row"><label>Payment Frequency</label>
+        <select formControlName="paymentFrequency">
+            <option value="monthly">Monthly</option>
+            <option value="annually">Annually</option>
+        </select>
+    </div>
+
+</div>
